@@ -13,6 +13,7 @@
 
 #include "example.h"
 #include "tests.h"
+#include "knight.h"
 
 using namespace godot;
 
@@ -32,6 +33,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_RUNTIME_CLASS(ExampleRuntime);
 	GDREGISTER_CLASS(ExamplePrzykład);
 	GDREGISTER_INTERNAL_CLASS(ExampleInternal);
+	GDREGISTER_CLASS(Knight)
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
