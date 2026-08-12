@@ -1,26 +1,34 @@
 #include "knight.h"
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/classes/node.hpp>
 #include <godot_cpp/classes/project_settings.hpp>
 #include <godot_cpp/classes/input_map.hpp>
+#include <godot_cpp/classes/engine.hpp>
+
+#define PRINT() godot::UtilityFunctions::print()
 
 Knight::Knight(){
-    b_velocity = 100;
+    b_velocity = 100.0;
     input = godot::Input::get_singleton();
     p_gravity = godot::ProjectSettings::get_singleton()->get_setting("physics/2d/default_gravity");
+    jump_velocity = -340;
 };
 Knight::~Knight(){
 
 };
 
 void Knight::_ready() {
-    godot::InputMap::get_singleton()->load_from_project_settings();
+    if(!godot::Engine::get_singleton()->is_editor_hint()){
+        godot::InputMap::get_singleton()->load_from_project_settings();
+        animator = get_node<godot::AnimatedSprite2D>("KnightAnimator");
+    }
     
 }
 
 void Knight::_physics_process(double p_delta) {
-    handle_move();
+    if(!godot::Engine::get_singleton()->is_editor_hint()){
+        handle_move(p_delta);
+    }
 }
 
 void Knight::set_b_velocity(double velocity){
@@ -31,17 +39,47 @@ double Knight::get_b_velocity() const {
     return b_velocity;
 };
 
-void Knight::handle_move(){
-    const godot::Vector2 &velocity = input->get_vector("left", "right", "up", "down") * Knight::b_velocity;
-    Knight::set_velocity(velocity);
-    move_and_slide();
-};
-
 void Knight::set_p_gravity(double p_gravity) {
     Knight::p_gravity = p_gravity;
 };
+
 double Knight::get_p_gravity() const {
     return p_gravity;
+};
+
+void Knight::set_jump_velocity(double velocity) {
+    Knight::jump_velocity = velocity;
+};
+
+double Knight::get_jump_velocity() {
+    return jump_velocity;
+};
+
+void Knight::handle_move(double delta){
+    godot::Vector2 velocity = Knight::get_velocity();
+    godot::Vector2 scale = get_scale();
+    if(!Knight::is_on_floor()){
+        velocity += Knight::get_gravity() * delta;
+    }; 
+    if(Knight::is_on_floor() && input->is_action_just_pressed("up")){
+        velocity.y = get_jump_velocity();
+    };
+    double direction = input->get_axis("left", "right");
+    if(direction) {
+        if(direction > 0 && scale.x < 0) {
+            scale.x = 1;
+        }else if(direction <0 && scale.x >0) {
+            scale.x = -1;
+        }
+        animator->play("run");
+        velocity.x = direction * b_velocity;
+    }else {
+        animator->play("idle");
+        velocity.x = godot::UtilityFunctions::move_toward(velocity.x, 0, b_velocity);
+    }
+    Knight::set_velocity(velocity);
+    Knight::set_scale(scale);
+    move_and_slide();
 };
 
 void Knight::resetting_gravity() {
