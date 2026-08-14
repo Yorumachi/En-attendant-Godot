@@ -6132,10 +6132,10 @@
         "output": "D:\\code\\project\\godoPro\\godot-cpp\\gen\\src\\variant\\utility_functions.windows.template_debug.x86_64.o"
     },
     {
-        "command": "g++ -o src\\example.o -c -std=c++17 -fno-exceptions -Wwrite-strings -fvisibility=hidden -O2 -DWINDOWS_ENABLED -DTHREADS_ENABLED -DHOT_RELOAD_ENABLED -DDEBUG_ENABLED -DNDEBUG -DGDEXTENSION -ID:\\code\\project\\godoPro\\godot-cpp\\gdextension -ID:\\code\\project\\godoPro\\godot-cpp\\include -ID:\\code\\project\\godoPro\\godot-cpp\\gen\\include -Isrc src\\example.cpp",
+        "command": "g++ -o src\\coin.o -c -std=c++17 -fno-exceptions -Wwrite-strings -fvisibility=hidden -O2 -DWINDOWS_ENABLED -DTHREADS_ENABLED -DHOT_RELOAD_ENABLED -DDEBUG_ENABLED -DNDEBUG -DGDEXTENSION -ID:\\code\\project\\godoPro\\godot-cpp\\gdextension -ID:\\code\\project\\godoPro\\godot-cpp\\include -ID:\\code\\project\\godoPro\\godot-cpp\\gen\\include -Isrc src\\coin.cpp",
         "directory": "D:\\code\\project\\godoPro\\godot-cpp\\test",
-        "file": "src\\example.cpp",
-        "output": "src\\example.o"
+        "file": "src\\coin.cpp",
+        "output": "src\\coin.o"
     },
     {
         "command": "g++ -o src\\knight.o -c -std=c++17 -fno-exceptions -Wwrite-strings -fvisibility=hidden -O2 -DWINDOWS_ENABLED -DTHREADS_ENABLED -DHOT_RELOAD_ENABLED -DDEBUG_ENABLED -DNDEBUG -DGDEXTENSION -ID:\\code\\project\\godoPro\\godot-cpp\\gdextension -ID:\\code\\project\\godoPro\\godot-cpp\\include -ID:\\code\\project\\godoPro\\godot-cpp\\gen\\include -Isrc src\\knight.cpp",

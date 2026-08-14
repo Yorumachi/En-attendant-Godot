@@ -11,29 +11,17 @@
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
-#include "example.h"
-#include "tests.h"
 #include "knight.h"
+#include "coin.h"
 
 using namespace godot;
 
 void initialize_example_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
-	}
-
-	GDREGISTER_CLASS(ExampleRef);
-	GDREGISTER_CLASS(ExampleMin);
-	GDREGISTER_CLASS(Example);
-	GDREGISTER_VIRTUAL_CLASS(ExampleVirtual);
-	GDREGISTER_ABSTRACT_CLASS(ExampleAbstractBase);
-	GDREGISTER_CLASS(ExampleConcrete);
-	GDREGISTER_CLASS(ExampleBase);
-	GDREGISTER_CLASS(ExampleChild);
-	GDREGISTER_RUNTIME_CLASS(ExampleRuntime);
-	GDREGISTER_CLASS(ExamplePrzykład);
-	GDREGISTER_INTERNAL_CLASS(ExampleInternal);
-	GDREGISTER_CLASS(Knight)
+	};
+	GDREGISTER_CLASS(Coin)
+	GDREGISTER_CLASS(Knight);
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

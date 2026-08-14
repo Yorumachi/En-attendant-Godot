@@ -3,6 +3,7 @@
 #include <godot_cpp/classes/character_body2d.hpp>
 #include <godot_cpp/classes/input.hpp>
 #include <godot_cpp/classes/animated_sprite2d.hpp>
+#include <godot_cpp/variant/signal.hpp>
 
 class Knight: public godot::CharacterBody2D {
     GDCLASS(Knight, godot::CharacterBody2D);

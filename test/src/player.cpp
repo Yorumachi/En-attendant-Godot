@@ -7,6 +7,7 @@
 #include <godot_cpp/classes/resource_loader.hpp>
 #include <godot_cpp/classes/timer.hpp>
 #include <godot_cpp/variant/signal.hpp>
+#include <godot_cpp/classes/area2d.hpp>
 
 void Player::set_base_velocity(double value) {
     base_velocity = value;

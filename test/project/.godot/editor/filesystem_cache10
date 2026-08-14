@@ -1,13 +1,10 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1786499842
-default_env.tres::Environment::8500773316878911020::1786499708::0::1::::<><><>0<>0<><>::
-example.gd::GDScript::1840552550878295419::1786178041::0::1::::<>Example<><>0<>0<><>::
+::res://::1786709602
+default_env.tres::Environment::8500773316878911020::1786709576::0::1::::<><><>0<>0<><>::
 example.gdextension::GDExtension::7677329757427780967::1786178041::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::6082749124934761441::1786178041::1786286983::1::::<><><>0<>0<>a2e8752c7ec4c09efe35ff00bf89fb0c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 LICENSE & CREDITS.txt::TextFile::-1::1713540094::0::1::::<><><>0<>0<><>::
-main.gd::GDScript::3809744306676498662::1786178041::0::1::::<>Node<><>0<>0<><>::
-test_base.gd::GDScript::256084018898538443::1786178041::0::1::::<>Node<><>0<>0<><>::
-::res://bin/::1786499840
+::res://bin/::1786709599
 ::res://bin/libgdexample.macos.template_debug.framework/::1786178041
 ::res://bin/libgdexample.macos.template_debug.framework/Resources/::1786178041
 ::res://bin/libgdexample.macos.template_release.framework/::1786178041
@@ -17,12 +14,15 @@ PixelOperator8-Bold.ttf::FontFile::2133630047475026615::1709819950::1786286955::
 PixelOperator8.ttf::FontFile::3317863897919482357::1709819950::1786286983::1::::<><><>0<>0<>aa6005803cf7a0b89737d9d7b7fcc101<>res://.godot/imported/PixelOperator8.ttf-47b55c2c6c56107c69fa972cdf12fcff.fontdata::
 ::res://music/::1786286983
 time_for_adventure.mp3::AudioStreamMP3::4494843047617739361::1710396512::1786286983::1::::<><><>0<>0<>c33dec653ea7250178f47b0700849807<>res://.godot/imported/time_for_adventure.mp3-2780301e92dd6fe7ff9355bb3f98cf7c.mp3str::
-::res://scens/::1786499364
-game.tscn::PackedScene::3747607219928915425::1786499364::0::1::::<><><>0<>0<><>::uid://cm0t4j078ydia::::res://scens/knight.tscn<>uid://cdwnwyu42noxg::::res://sprites/world_tileset.png
+::res://scens/::1786709576
+coin.tscn::PackedScene::1930628914763695931::1786708877::0::1::::<><><>0<>0<><>::uid://cix6k1pavhs5i::::res://sprites/coin.png<>uid://djngattior0ns::::res://script/coin.gd
+game.tscn::PackedScene::3747607219928915425::1786708733::0::1::::<><><>0<>0<><>::uid://cm0t4j078ydia::::res://scens/knight.tscn<>uid://cdwnwyu42noxg::::res://sprites/world_tileset.png<>uid://dffbvt485n7sp::::res://scens/platforms.tscn<>uid://2rhf8vx61enr::::res://scens/coin.tscn
 knight.gd::GDScript::8532632085595982996::1786454664::0::1::::<>Knight<><>0<>0<><>::
-knight.tscn::PackedScene::5667922858609131308::1786499189::0::1::::<><><>0<>0<><>::uid://dqtnr1234exdo::::res://script/knight.gd<>uid://djd0vu1awwjhn::::res://sprites/knight.png
-::res://script/::1786448686
-knight.gd::GDScript::8322327814645256832::1786448686::0::1::::<>Knight<><>0<>0<><>::
+knight.tscn::PackedScene::5667922858609131308::1786709576::0::1::::<><><>0<>0<><>::uid://dqtnr1234exdo::::res://script/knight.gd<>uid://djd0vu1awwjhn::::res://sprites/knight.png
+platforms.tscn::PackedScene::7520627420987521691::1786606462::0::1::::<><><>0<>0<><>::uid://encs3bcvglhi::::res://sprites/platforms.png
+::res://script/::1786693390
+coin.gd::GDScript::7818163884258796760::1786693390::0::1::::<>Area2D<><>0<>0<><>::
+knight.gd::GDScript::8322327814645256832::1786605427::0::1::::<>Knight<><>0<>0<><>::
 ::res://sounds/::1786286983
 coin.wav::AudioStreamWAV::7313955402371791951::1710332290::1786286983::1::::<><><>0<>0<>776a2b7cedcfc804739589fdde9f69ae<>res://.godot/imported/coin.wav-fc7782b3c19e2c95d42ef7b3c218a810.sample::
 explosion.wav::AudioStreamWAV::8710787457923304223::1710332262::1786286983::1::::<><><>0<>0<>5cf443473e923e68a4ebf343cd191695<>res://.godot/imported/explosion.wav-3b6b3677a752f01353ef5846b5b927e3.sample::

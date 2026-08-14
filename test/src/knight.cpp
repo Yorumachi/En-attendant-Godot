@@ -4,8 +4,9 @@
 #include <godot_cpp/classes/project_settings.hpp>
 #include <godot_cpp/classes/input_map.hpp>
 #include <godot_cpp/classes/engine.hpp>
+#include <godot_cpp/variant/signal.hpp>
 
-#define PRINT() godot::UtilityFunctions::print()
+#define PRINT(a, ...) godot::UtilityFunctions::print(a, __VA_ARGS__)
 
 Knight::Knight(){
     b_velocity = 100.0;
@@ -57,28 +58,29 @@ double Knight::get_jump_velocity() {
 
 void Knight::handle_move(double delta){
     godot::Vector2 velocity = Knight::get_velocity();
-    godot::Vector2 scale = get_scale();
     if(!Knight::is_on_floor()){
         velocity += Knight::get_gravity() * delta;
+        animator->play("jump");
     }; 
     if(Knight::is_on_floor() && input->is_action_just_pressed("up")){
         velocity.y = get_jump_velocity();
     };
     double direction = input->get_axis("left", "right");
     if(direction) {
-        if(direction > 0 && scale.x < 0) {
-            scale.x = 1;
-        }else if(direction <0 && scale.x >0) {
-            scale.x = -1;
+        godot::Vector2 scale = Knight::get_scale();
+        if(direction < 0) {
+            animator->set_flip_h(true);
+        }else if(direction > 0) {
+            animator->set_flip_h(false);
         }
         animator->play("run");
         velocity.x = direction * b_velocity;
+        Knight::set_scale(scale);
     }else {
         animator->play("idle");
         velocity.x = godot::UtilityFunctions::move_toward(velocity.x, 0, b_velocity);
     }
     Knight::set_velocity(velocity);
-    Knight::set_scale(scale);
     move_and_slide();
 };
 
