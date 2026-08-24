@@ -13,6 +13,7 @@ Knight::Knight(){
     input = godot::Input::get_singleton();
     p_gravity = godot::ProjectSettings::get_singleton()->get_setting("physics/2d/default_gravity");
     jump_velocity = -340;
+    const char* lala = "lily";
 };
 Knight::~Knight(){
 
@@ -89,7 +90,7 @@ void Knight::resetting_gravity() {
 };
 
 void Knight::_bind_methods() {
-    godot::ClassDB::bind_method(godot::D_METHOD("set_b_velocity", "value"),&set_b_velocity);
+    godot::ClassDB::bind_method(godot::D_METHOD("set_b_velocity", "value"), &set_b_velocity);
     godot::ClassDB::bind_method(godot::D_METHOD("get_b_velocity"), &get_b_velocity);
     godot::ClassDB::bind_method(godot::D_METHOD("set_p_gravity", "p_gravity"),&set_p_gravity);
     godot::ClassDB::bind_method(godot::D_METHOD("get_p_gravity"), &get_p_gravity);

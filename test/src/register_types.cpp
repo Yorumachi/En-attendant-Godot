@@ -13,6 +13,9 @@
 
 #include "knight.h"
 #include "coin.h"
+#include "killzone.h"
+#include "edge.h"
+#include "enemy.h"
 
 using namespace godot;
 
@@ -22,6 +25,9 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	};
 	GDREGISTER_CLASS(Coin)
 	GDREGISTER_CLASS(Knight);
+	GDREGISTER_CLASS(Killzone);
+	GDREGISTER_CLASS(Edge);
+	GDREGISTER_CLASS(Enemy);
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
